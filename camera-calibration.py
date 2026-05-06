@@ -2,7 +2,7 @@
 # https://aliyasineser.medium.com/opencv-camera-calibration-e9a48bdd1844
 
 '''
-python3 camera-calibration.py --dirpath ./calibration-photos --image_format JPG --square_size 27.5 --width 10 --height 7 --output calibration.yaml
+python3 camera-calibration.py --dirpath ./calibration-photos --image_format JPG --square_size 27.5 --width 9 --height 6 --output calibration.yaml
 
 '''
 
