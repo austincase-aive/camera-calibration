@@ -67,3 +67,18 @@ def load_coefficients(path):
 
     cv_file.release()
     return [camera_matrix, dist_matrix]
+
+if __name__=="__main__":
+    parser = argparse.ArgumentParser(description='Camera calibration')
+    parser.add_argument('--dirpath', type=str, required=True, help='Directory path to the calibration images')
+    parser.add_argument('--prefix', type=str, required=True, help='Prefix of the calibration images')
+    parser.add_argument('--image_format', type=str, required=True, help='Format of the calibration images')
+    parser.add_argument('--square_size', type=float, required=True, help='Size of the calibration chessboard squares')
+    parser.add_argument('--width', type=int, required=True, help='Width of the calibration chessboard')
+    parser.add_argument('--height', type=int, required=True, help='Height of the calibration chessboard')
+    parser.add_argument('--output', type=str, required=True, help='Output path to save the calibration results')
+    args = parser.parse_args()
+
+    ret, mtx, dist, rvecs, tvecs = calibrate(args.dirpath, args.prefix, args.image_format, args.square_size, args.width, args.height)
+    save_coefficients(mtx, dist, args.output)
+    print("Calibration complete. Results saved to", args.output)
