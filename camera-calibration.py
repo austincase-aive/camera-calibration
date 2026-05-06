@@ -1,5 +1,4 @@
 # Stolen code from OpenCV's camera calibration tutorial
-# https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html
 # https://aliyasineser.medium.com/opencv-camera-calibration-e9a48bdd1844
 
 import numpy as np
