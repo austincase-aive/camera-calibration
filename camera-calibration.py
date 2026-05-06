@@ -11,6 +11,16 @@ import cv2
 import glob
 import argparse
 
+'''
+python3 camera-calibration.py --dirpath calibration\ photos --image_format JPG --square_size 0.1 --width 15 --height 10 --output calibration.yml
+'''
+
+# PDF parameters
+# Single square side length = 27.52 mm
+# Grid size = 10x7
+# Total width = 10 * 27.52 mm = 275.2 mm
+# Total height = 7 * 27.52 mm = 192.64 mm
+
 # termination criteria
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
